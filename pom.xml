@@ -14,6 +14,7 @@
         <module>flink-commons</module>
         <module>flink-auccalc</module>
         <module>flink-itemcf</module>
+        <module>flink-base</module>
     </modules>
 
     <properties>
@@ -35,6 +36,14 @@
             <releases>
                 <enabled>true</enabled>
             </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>alimaven</id>
+            <name>Maven Aliyun Mirror</name>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
