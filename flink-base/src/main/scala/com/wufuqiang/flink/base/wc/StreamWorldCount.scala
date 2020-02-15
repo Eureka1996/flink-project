@@ -6,6 +6,7 @@ import org.apache.flink.streaming.api.scala._
 /**
   * @ author wufuqiang
   **/
+
 object StreamWorldCount {
   def main(args:Array[String]):Unit ={
     val env = StreamExecutionEnvironment.getExecutionEnvironment
