@@ -3,8 +3,7 @@ package com.wufuqiang.flink.base.source
 import java.util.Properties
 
 import org.apache.flink.api.common.serialization.SimpleStringSchema
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010
-import org.apache.kafka.common.serialization.StringDeserializer
+import org.apache.flink.streaming.connectors.kafka.{FlinkKafkaConsumer010, FlinkKafkaProducer010}
 
 /**
   * @ author wufuqiang
@@ -14,7 +13,7 @@ class KafkaSource(serversParam:String,groupIdParam:String,topicParam:String) {
   var servers = serversParam
   var topic = topicParam
   var groupId = groupIdParam
-  var kafkaProperties:Properties = null
+  var kafkaProperties:Properties = _
 
   def getSource(): FlinkKafkaConsumer010[String] ={
     val kafkaPros = new Properties()
@@ -26,5 +25,11 @@ class KafkaSource(serversParam:String,groupIdParam:String,topicParam:String) {
     this.kafkaProperties = kafkaPros
     new FlinkKafkaConsumer010[String](topic,new SimpleStringSchema(),kafkaPros)
   }
+
+  def getSink():FlinkKafkaProducer010[String]={
+    new FlinkKafkaProducer010[String](servers,topic,new SimpleStringSchema())
+  }
+
+
 
 }
