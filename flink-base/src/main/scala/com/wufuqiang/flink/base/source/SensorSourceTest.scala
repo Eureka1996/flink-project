@@ -10,8 +10,9 @@ object SensorSourceTest {
   def main(args:Array[String]):Unit={
     val env = StreamExecutionEnvironment.getExecutionEnvironment
     val rawStream:DataStream[SensorReading] = env.addSource(new SensorSource)
-    val resultStream = rawStream.keyBy(0)
-      .sum(2)
+    val resultStream = rawStream.keyBy(_.id)
+      .reduce((i1,i2)=>SensorReading(i1.id,i1.timestamp,i2.temperature))
+//      .sum("temperature")
     resultStream.print("wufuqiang")
     env.execute("SensorSourceTest")
   }
