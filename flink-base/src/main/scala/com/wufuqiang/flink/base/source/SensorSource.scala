@@ -30,7 +30,7 @@ class SensorSource extends SourceFunction[SensorReading]{
         val sensorLog = new SensorReading(t._1,System.currentTimeMillis(),t._2+rand.nextGaussian())
         sourceContext.collect(sensorLog)
       })
-      Thread.sleep(5000)
+      Thread.sleep(rand.nextInt(5000))
     }
 
   }
