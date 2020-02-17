@@ -5,7 +5,6 @@ import com.wufuqiang.auc.entries.ActionLog;
 import com.wufuqiang.auc.entries.ItemWithRank;
 import com.wufuqiang.auc.entries.LabelScoreItem;
 import com.wufuqiang.auc.entries.UaucItemWithRank;
-import com.wufuqiang.commons.Constants;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.functions.GroupReduceFunction;
 import org.apache.flink.api.common.functions.JoinFunction;
@@ -150,7 +149,7 @@ public class AucCalcSecond {
             return;
         }
 
-        System.out.println("get '"+tablename+"','12771"+ Constants.SPLIT+getReverseTime(time)+"'");
+        System.out.println("get '"+tablename+"','12771"+ "_"+getReverseTime(time)+"'");
 
         BatchTableEnvironment tableEnvironment = TableEnvironment.getTableEnvironment(env);
 
@@ -512,7 +511,7 @@ public class AucCalcSecond {
                 if(second != null){
                     uauc = second.f2;
                 }
-                return new Tuple3<>(sceneId,channel,Double.toString(auc)+Constants.SPLIT+Double.toString(uauc));
+                return new Tuple3<>(sceneId,channel,Double.toString(auc)+"_"+Double.toString(uauc));
             }
         });
 

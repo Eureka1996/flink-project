@@ -10,27 +10,48 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>flink-auccalc</artifactId>
+
+    <properties>
+        <scala.version>2.11</scala.version>
+        <flink.version>1.6.2</flink.version>
+        <hadoop.version>3.1.1</hadoop.version>
+    </properties>
+
     <dependencies>
         <dependency>
-            <artifactId>flink-commons</artifactId>
-            <groupId>com.wufuqiang</groupId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-scala_${scala.version}</artifactId>
+            <version>${flink.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-java</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table_${scala.version}</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-hadoop-fs</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+
     </dependencies>
-    <repositories>
-        <repository>
-            <id>alimaven</id>
-            <name>Maven Aliyun Mirror</name>
-            <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-
 
 </project>
