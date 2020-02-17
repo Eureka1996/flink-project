@@ -11,7 +11,6 @@
     <modules>
         <module>flink-process</module>
         <module>flink-statistics</module>
-        <module>flink-commons</module>
         <module>flink-auccalc</module>
         <module>flink-itemcf</module>
         <module>flink-base</module>
@@ -37,7 +36,7 @@
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
         <repository>

@@ -1,11 +1,5 @@
 package com.wufuqiang.statistics.action;
 
-import com._4paradigm.commonData.SceneIdAndTimeWindowKey;
-import com._4paradigm.commonData.TimestampWindowKey;
-import com._4paradigm.data.Constants;
-import com._4paradigm.utils.HBaseUtils;
-import com._4paradigm.utils.PropertiesUtil;
-import com._4paradigm.utils.TimestampWindowKeyLinkUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.api.common.functions.MapFunction;
